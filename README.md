@@ -85,6 +85,13 @@ Install boost
 ```
 sudo apt-get install libboost-all-dev
 ```
+# GMock Implementation
+Gmock have been to used to create the mocks.
+
+The mocks removes the dependencies of the classes under test on actual implementation of the dependent classes and make it easier to test them in isolation.
+
+The mock dependencies are injected at the time of unit testing.
+
 ## Demo
 Run the program. Once the velocities and headings are converged to the target then graphs will be displayed as below. Also, converged values will be shown in the terminal.
 
