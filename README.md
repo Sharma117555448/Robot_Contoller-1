@@ -86,7 +86,7 @@ Install boost
 sudo apt-get install libboost-all-dev
 ```
 # GMock Implementation
-Gmock have been to used to create the mocks.
+Gmock have been to used to create the mocks. We have created a mock of PID class.
 
 The mocks removes the dependencies of the classes under test on actual implementation of the dependent classes and make it easier to test them in isolation.
 
