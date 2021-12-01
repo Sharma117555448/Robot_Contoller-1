@@ -9,6 +9,8 @@
 
 #include <gtest/gtest.h>
 #include "twoWDRobot.hpp"
+#include "GMockPID.hpp"
+
 
 TwoWDRobot twoWDRobot;
 
@@ -23,6 +25,7 @@ TEST(TwoWDRobotTests, testComputeOutputs) {
     twoWDRobot.setTargetHeading(10.0);
     twoWDRobot.setTargetVelocity(10.0);
     EXPECT_TRUE(twoWDRobot.computeOutput(0.0, 0.0, false));
+    EXPECT_TRUE(mockPID, computeOutput, (), return(velocity), (double), (false));
 }
 
 
