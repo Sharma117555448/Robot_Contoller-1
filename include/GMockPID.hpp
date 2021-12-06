@@ -6,15 +6,34 @@
  * @copyright Copyright (c) 2021
  *
  */
+#ifndef INCLUDE_GMOCKPID_HPP_
+#define INCLUDE_GMOCKPID_HPP_
 
 #include <gtest/gtest.h>
-#include <PID.hpp>
+#include <gmock/gmock.h>
+#include <pid.hpp>
 
 class MockPID : public PID {
-pulic: 
-    MockMethod(bool, Kp, (double), (const));
-    MockMethod(bool, Kd, (double), (const));
-    MockMethod(bool, Ki, (double), (const));
+pulic:
+    /// pGain proportional gain
+    /// @return true/false
+    MOCK_METHOD1(setKp, bool(double pGain));
 
-    MockMethod(double, ComputePID, (targetvelocity), (double), (const));
-}
+    /// dGain diffrential gain
+    /// @return true/false
+    MOCK_METHOD1(setKd, bool(double dGain));
+
+    /// iGain integral gain
+    /// @return true/false
+    MOCK_METHOD1(setKi, bool(double iGain));
+
+    /// velocity target velocity of the robot
+    /// @return true/false
+    MOCK_METHOD1(setTargetVelocity, bool(double velocity));
+
+    /// compute currentVelocity current velocity of the robot
+    /// @return newVelocity
+    MOCK_METHOD2(ComputePID, double(double currentVelocity, double t);
+
+};
+#endif  // INCLUDE_GMOCKPID_HPP_
